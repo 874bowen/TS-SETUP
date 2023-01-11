@@ -15,7 +15,7 @@ console.log("My dev skills are amazing");
 
 class User {
 
-   private _courseCount: number = 1
+   protected _courseCount: number = 1
    city?: string;
    constructor(
       private email: string, 
@@ -40,5 +40,16 @@ class User {
    }
 }
 
+class SubUser extends User {
+   isFamily: boolean = true;
+   changeCourseCount(){
+      this._courseCount = 4;
+   }
+}
+
 const ivan = new User("ivan@ivan.com", "ivan", 20)
 ivan.city = "Nairobery"
+
+const idah = new SubUser("ida@ivan.com", "idah", 20)
+
+idah.changeCourseCount();
