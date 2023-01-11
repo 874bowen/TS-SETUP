@@ -15,12 +15,28 @@ console.log("My dev skills are amazing");
 
 class User {
 
+   private _courseCount: number = 1
    city?: string;
    constructor(
       private email: string, 
       public name: string, 
       public age: number) {
       
+   }
+
+   get getAppleEmail(): string {
+      return `apple ${this.email}`
+   } 
+
+   get getCourseCount(): number {
+      return this._courseCount;
+   }
+
+   set setCourseCount (courseNum: number) {
+      if (courseNum <= 1) {
+         throw new Error("Course count cannot be less than 2");
+      }
+      this._courseCount = courseNum;
    }
 }
 

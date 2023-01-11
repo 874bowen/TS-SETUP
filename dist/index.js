@@ -17,6 +17,19 @@ class User {
         this.email = email;
         this.name = name;
         this.age = age;
+        this._courseCount = 1;
+    }
+    get getAppleEmail() {
+        return `apple ${this.email}`;
+    }
+    get getCourseCount() {
+        return this._courseCount;
+    }
+    set setCourseCount(courseNum) {
+        if (courseNum <= 1) {
+            throw new Error("Course count cannot be less than 2");
+        }
+        this._courseCount = courseNum;
     }
 }
 const ivan = new User("ivan@ivan.com", "ivan", 20);
