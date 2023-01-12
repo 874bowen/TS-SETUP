@@ -23,3 +23,13 @@ class CocaBottle {
 }
 const coke = new CocaBottle("cocacola", 6);
 identityFour(coke);
+// Taking type as array
+function getSearchProducts(products) {
+    const myIndex = 3;
+    return products[myIndex]; /**one of the values in the array */
+}
+// "<T,>" means this is not a JSX or TSX rather generics in TS
+const getMoreSearchProducts = (products) => {
+    const myIndex = 4;
+    return products[myIndex];
+};

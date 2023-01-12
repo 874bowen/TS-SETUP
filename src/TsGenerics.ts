@@ -37,3 +37,15 @@ class CocaBottle implements Bootle {
 const coke = new CocaBottle("cocacola", 6);
 
 identityFour<Bootle>(coke)
+
+// Taking type as array
+function getSearchProducts<T>(products: T[]): T{
+   const myIndex = 3
+   return products[myIndex] /**one of the values in the array */
+}
+
+// "<T,>" means this is not a JSX or TSX rather generics in TS
+const getMoreSearchProducts = <T,>( products: T[]): T => { 
+   const myIndex = 4
+   return products[myIndex] 
+}
